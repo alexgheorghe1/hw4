@@ -1,5 +1,7 @@
 <h1>New Place</h1>
 
+<% if @current_user %>
+
 <%= form_with model: @place do |form| %>
   <p>
     <%= form.label "name" %>
@@ -8,4 +10,6 @@
   <p>
     <%= form.submit %>
   </p>
+<% end %>
+
 <% end %>

@@ -10,9 +10,22 @@
   </head>
 
   <body>
+  
+      <p>
+        <% if @current_user %>
+          Welcome <%= @current_user.first_name%>
+          <%= button_to "Logout", "/sessions/logout", method: :delete %>
+        <% else %>
+          <a href="/sessions/new">Login</a> or
+          <a href="/users/new">Sign up</a>
+        <% end %>
+
+      </p>
+
     <div>
       <%= flash[:notice] %>
     </div>
+
     <div>
       <a href="/">Home</a>
       <%#= button_to "Logout", "/sessions/logout", method: :delete %>

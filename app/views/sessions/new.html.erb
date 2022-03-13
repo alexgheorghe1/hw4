@@ -3,6 +3,20 @@
 <%= form_with url: "/sessions" do |form| %>
   
   <p>
+    <%= form.label "email" %>
+    <%= form.text_field "email" %>
+    <%= form.label "password" %>
+    <%= form.password_field "password" %>
+  </p>
+
+  <p>
     <%= form.submit "Login" %>
   </p>
+
 <% end %>
+
+
+
+   
+
+   
