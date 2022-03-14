@@ -2,23 +2,33 @@
 
 <% if @current_user %>
 
-<%= form_with model: @post do |form| %>
-  <p>
-    <%= form.label "title" %>
-    <%= form.text_field "title" %>
-  </p>
-  <p>
-    <%= form.label "description" %>
-    <%= form.text_field "description" %>
-  </p>
-  <p>
-    <%= form.label "posted_on" %>
-    <%= form.date_field "posted_on" %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-  <%= form.hidden_field "place_id" %>
-<% end %>
+  <%= form_with model: @post do |form| %>
+    <p>
+      <%= form.label "title" %>
+      <%= form.text_field "title" %>
+    </p>
+    <p>
+      <%= form.label "description" %>
+      <%= form.text_field "description" %>
+    </p> 
+    <p>
+      <%= form.label "posted_on" %>
+      <%= form.date_field "posted_on" %>
+    </p>
 
+    <p>
+      <%= form.label "uploaded_image", class: "form-label" %>
+      <%= form.file_field "uploaded_image", accept: "image/png,image/jpg,image/jpeg", class: "form-control" %>
+    </p>
+
+
+    <p>
+      <%= form.submit "Post"%>
+    </p>
+
+    <%= form.hidden_field "place_id" %>
+
+  <% end %>
+<% else %>
+  You must first <a href="/sessions/new"> login </a> to post.
 <% end %>

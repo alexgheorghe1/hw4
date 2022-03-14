@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         if BCrypt::Password.new(@user.password) == entered_password
           session["user_id"] = @user.id
           flash[:notice] = "Welcome!"
-          redirect_to "/posts" #password matches
+          redirect_to "/places" #password matches
         else #password doesn't match, send back to login page
           flash[:notice] = "Password is incorrect"
           redirect_to "/sessions/new" 
