@@ -3,27 +3,29 @@
 <% if @current_user %>
 
   <%= form_with model: @post do |form| %>
-    <p>
+    <div class="mb-1">
       <%= form.label "title" %>
       <%= form.text_field "title" %>
-    </p>
-    <p>
+    </div>
+
+    <div class="mb-1">
       <%= form.label "description" %>
       <%= form.text_field "description" %>
-    </p> 
-    <p>
+    </div>
+
+    <div class="mb-1">
       <%= form.label "posted_on" %>
       <%= form.date_field "posted_on" %>
-    </p>
+    </div>
 
-    <p>
+    <div class="mb-1">
       <%= form.label "uploaded_image", class: "form-label" %>
       <%= form.file_field "uploaded_image", accept: "image/png,image/jpg,image/jpeg", class: "form-control" %>
-    </p>
+    </div>
 
 
     <p>
-      <%= form.submit "Post"%>
+      <%= form.submit "Post", class: "btn btn-outline-primary"%>
     </p>
 
     <%= form.hidden_field "place_id" %>
